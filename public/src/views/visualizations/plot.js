@@ -30,6 +30,7 @@ define([
                     function (str) { return str.trim() }
                 );
                 var sampleName = this.model.getConf("sample", "").trim();
+                var colors = d3.scale.category10();
                 var series = _.chain(fieldNames).compact().concat([""])
                 .map(function(field, i, list) {
                     if (list.length > 1 && !field) return null;
@@ -38,7 +39,7 @@ define([
                         name: template(tplMessage, {
                             'field': field
                         }),
-                        color: '#a6d87a',
+                        color: colors(i),
                         data: _.map(
                             _.sortBy(
                                 _.filter(

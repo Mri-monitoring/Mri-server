@@ -25940,7 +25940,7 @@ Logger, Requests, Urls, Storage, Cache, Cookies, Template, Resources, Offline, B
     
     return hr;
 });
-define('hr/args',[],function() { return {"revision":1431712558935,"baseUrl":"/"}; });
+define('hr/args',[],function() { return {"revision":1431712794430,"baseUrl":"/"}; });
 define('core/api',[
     'hr/hr'
 ], function(hr) {
@@ -42940,6 +42940,7 @@ define('views/visualizations/plot',[
                     function (str) { return str.trim() }
                 );
                 var sampleName = this.model.getConf("sample", "").trim();
+                var colors = d3.scale.category10();
                 var series = _.chain(fieldNames).compact().concat([""])
                 .map(function(field, i, list) {
                     if (list.length > 1 && !field) return null;
@@ -42948,7 +42949,7 @@ define('views/visualizations/plot',[
                         name: template(tplMessage, {
                             'field': field
                         }),
-                        color: '#a6d87a',
+                        color: colors(i),
                         data: _.map(
                             _.sortBy(
                                 _.filter(
