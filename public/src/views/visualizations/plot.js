@@ -71,8 +71,12 @@ define([
                 // Build hover details
                 var hoverDetail = new Rickshaw.Graph.HoverDetail( {
                     graph: graph,
+                    formatter: function(series, x, y) {
+                        var content = sampleName + ': ' + parseInt(x) + '<br>' + series.name + ': ' + y.toPrecision(4);
+                        return content;
+                    },
                     xFormatter: function(x) {
-                        return template("<%- x %>", {'x': x});
+                        return null
                     }
                 });
             } catch(e) {
