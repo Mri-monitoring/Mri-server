@@ -218,6 +218,10 @@
                     "label": "Fields",
                     "help": "Separated by commas"
                 },
+                "scales": {
+                    "label": "Scales",
+                    "help": "E.g. min max, min max, auto"
+                },
                 "limit": {
                     "label": "Limit",
                     "help": "Max number of events"

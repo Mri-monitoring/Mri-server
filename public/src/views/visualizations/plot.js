@@ -29,6 +29,34 @@ define([
                 var fieldNames = _.map(this.model.getConf("fields", "").split(","), 
                     function (str) { return str.trim() }
                 );
+                var scale_text = _.map(this.model.getConf("scales", "").split(","),
+                    function (str) { 
+                        return str.trim();
+                    }
+                );
+                var scales = _.map(fieldNames,
+                    function(field, i, list) {
+                        var text = scale_text[i];
+                        if (text == "auto") {
+                            filtered_data = _.filter(
+                                that.data,
+                                function(n) { return n['properties'][field]; }
+                            );
+                            var maxval = _.max(
+                                filtered_data,
+                                function(n) { return n['properties'][field]; }
+                            )['properties'][field];
+                            var minval = _.min(
+                                filtered_data,
+                                function(n) { return n['properties'][field]; }
+                            )['properties'][field];
+                            return d3.scale.linear().domain([minval, maxval]).nice();
+                        } else {
+                            var nums =_.map(text.split(' '), Number); 
+                            return d3.scale.linear().domain([nums[0], nums[1]]).nice();
+                        }
+                    }
+                );
                 var sampleName = this.model.getConf("sample", "").trim();
                 var colors = d3.scale.category10();
                 var series = _.chain(fieldNames).compact().concat([""])
@@ -51,9 +79,10 @@ define([
                             function(d) {
                             return {
                                 x: d.properties[sampleName],
-                                y: field? d.properties[field] : d.n
+                                y: field? d.properties[field] : d.n,
                             };
-                        })
+                        }),
+                        scale: scales[i]
                     }
                 })
                 .compact()
@@ -75,9 +104,6 @@ define([
                         var content = sampleName + ': ' + parseInt(x) + '<br>' + series.name + ': ' + y.toPrecision(4);
                         return content;
                     },
-                    xFormatter: function(x) {
-                        return null
-                    }
                 });
             } catch(e) {
                 console.error(e);
@@ -107,6 +133,11 @@ define([
                 'type': "text",
                 'label': i18n.t("visualizations.plot.config.fields.label"),
                 'help': i18n.t("visualizations.plot.config.fields.help")
+            },
+            'scales': {
+                'type': "text",
+                'label': i18n.t("visualizations.plot.config.scales.label"),
+                'help': i18n.t("visualizations.plot.config.scales.help")
             },
             'limit': {
                 'type': "number",
