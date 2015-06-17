@@ -2,7 +2,7 @@
     "name": "Mri-Server",
     "description": "Neural network monitoring",
     "website": "https://github.com/Mri-monitoring/Mri-server"
-    "repository": "https://github.com/Mri-monitoring/Mri-server",
+    "repository": "https://github.com/Mri-monitoring/Mri-server.git",
     "logo": "https://avatars2.githubusercontent.com/u/7984166?v=2&s=200",
     "keywords": ["node", "dashboard", "analytic"],
     "addons": ["mongolab"],
