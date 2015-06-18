@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "author": "nharada@umich.edu",
     "homepage": "https://github.com/Mri-monitoring/Mri-Server",
-    "bugs": "https://github.com/Mri-monitoring/Mri-Server/issues"
+    "bugs": "https://github.com/Mri-monitoring/Mri-Server/issues",
     "repository": {
         "type": "git",
         "url": "https://github.com/Mri-monitoring/Mri-Server"
