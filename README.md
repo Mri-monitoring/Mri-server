@@ -13,9 +13,9 @@ The project is entirely open source and you can host your own Mri-server instanc
 
 [![Screen Preview](./preview.png)](./preview.png)
 
-## Start your instance
+## Start your instance (only required if deploying by hand)
 
-Mri-server is really easy to run locally or on heroku-compatible services.
+Mri-server is really easy to run locally or on heroku-compatible services. Note that if you used the *Deploy to Heroku* button above, you do not need to follow these steps unless you'd like to edit Mri-Server's codebase.
 
 ```
 $ git clone https://github.com/Mri-monitoring/Mri-server.git 
@@ -48,8 +48,6 @@ Reportr is configured using environment variables.
 | REDIS_URL | (Optional) Url for a redis database when using worker mode |
 | AUTH_USERNAME | Username for authentication |
 | AUTH_PASSWORD | Password for authentication |
-
-See [types](#types) for informations about alert configurations.
 
 ## Running with Mri-Client
 The Mri-Client already knows how to talk to the server, and will automatically create reports and visualizations as you train networks. Simply modify the Mri-Client configuration file to properly interface with the server as a dispatch. See the Reportr project page for full API specifications.
