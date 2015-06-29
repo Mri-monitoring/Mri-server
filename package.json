@@ -1,7 +1,7 @@
 {
     "name": "mri-server",
     "description": "Neural network monitoring",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "nharada@umich.edu",
     "homepage": "https://github.com/Mri-monitoring/Mri-Server",
     "bugs": "https://github.com/Mri-monitoring/Mri-Server/issues",
@@ -23,7 +23,8 @@
         "angular-expressions": "0.2.1",
         "kue": "0.8.1",
         "nodemailer": "0.7.0",
-        "twilio": "1.6.0"
+        "twilio": "1.6.0", 
+        "json2csv": "2.4.3"
     },
     "devDependencies": {
         "mocha": "1.18.2",

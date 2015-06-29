@@ -25940,7 +25940,7 @@ Logger, Requests, Urls, Storage, Cache, Cookies, Template, Resources, Offline, B
     
     return hr;
 });
-define('hr/args',[],function() { return {"revision":1433454848089,"baseUrl":"/"}; });
+define('hr/args',[],function() { return {"revision":1435614213155,"baseUrl":"/"}; });
 define('core/api',[
     'hr/hr'
 ], function(hr) {
@@ -26585,7 +26585,7 @@ define('utils/dialogs',[
 
     return Dialogs;
 });
-define('text!resources/langs/en.json',[],function () { return '{\n    "id": "en",\n    "language": "English",\n    "toolbar": {\n        "createReport": "Create a report",\n        "createVisualization": "Create a visualization",\n        "manageAlerts": "Manage alerts",\n        "createAlert": "Create an alert",\n        "editReport": "Edit report",\n        "help": "Help",\n        "removeReport": "Remove report",\n        "settings": "Settings"\n    },\n    "reports": {\n        "empty": {\n            "message": "There is no reports yet to show.",\n            "create": "Create a report"\n        }\n    },\n    "alert": {\n        "edit": "Edit",\n        "remove": "Remove",\n        "disable": "Disable",\n        "enable": "Enable"\n    },\n    "dialogs": {\n        "alert": {\n            "title": "Alert",\n            "close": "Close"\n        },\n        "confirm": {\n            "title": "Confirm",\n            "cancel": "Cancel",\n            "ok": "Ok"\n        },\n        "prompt": {\n            "title": "Input",\n            "ok": "Ok"\n        },\n        "select": {\n            "title": "Select",\n            "ok": "Ok"\n        },\n        "fields": {\n            "title": "Input",\n            "ok": "Ok"\n        }\n    },\n    "alerts": {\n        "manage": {\n            "title": "Manage alerts",\n            "create": "Create a new alert",\n            "ok": "Ok"\n        },\n        "create": {\n            "title": "Create a new alert",\n            "fields": {\n                "title": {\n                    "label": "Title"\n                },\n                "eventName": {\n                    "label": "Event"\n                },\n                "type": {\n                    "label": "Type"\n                },\n                "interval": {\n                    "label": "Interval",\n                    "help": "Minimum interval for notifications in minutes."\n                },\n                "condition": {\n                    "label": "Condition",\n                    "help": "Learn more about alert conditions in the documentation"\n                }\n            }\n        },\n        "types": {\n            "mail": {\n                "title": "Mail",\n                "config": {\n                    "to": {\n                        "label": "To",\n                        "help": "Addresses separated by commas"\n                    }\n                }\n            },\n            "sms": {\n                "title": "SMS",\n                "config": {\n                    "to": {\n                        "label": "To",\n                        "help": "Phone number"\n                    },\n                    "body": {\n                        "label": "Message",\n                        "help": "Template for the message body."\n                    }\n                }\n            },\n            "webhook": {\n                "title": "Webhook",\n                "config": {\n                    "url": {\n                        "label": "Url"\n                    }\n                }\n            }\n        }\n    },\n    "reports": {\n        "select": {\n            "title": "Select a report",\n            "message": "Choose a new report to open."\n        },\n        "create": {\n            "title": "Create a new report",\n            "fields": {\n                "title": "Title"\n            }\n        },\n        "edit": {\n            "title": "Edit report",\n            "fields": {\n                "title": "Title"\n            }\n        },\n        "remove": {\n            "title": "Remove this report?"\n        },\n        "empty": {\n            "message": "There is no reports yet to show.",\n            "create": "Create a report"\n        }\n    },\n    "visualization": {\n        "create": {\n            "title": "New visualization",\n            "fields": {\n                "eventName": "Event",\n                "type": "Type"\n            }\n        }\n    },\n    "visualizations": {\n        "bar": {\n            "title": "Bar Chart",\n            "config": {\n                "field": "Field",\n                "max": "Max Bars"\n            }\n        },\n        "map": {\n            "title": "Map",\n            "config": {\n                "message": {\n                    "label": "Marker Message",\n                    "help": "Template for the message, see documentation for more infos about templates."\n                }\n            }\n        },\n        "table": {\n            "title": "Table",\n            "date": "Date",\n            "config": {\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by comas"\n                },\n                "limit": {\n                    "label": "Limit"\n                }\n            }\n        },\n        "time": {\n            "title": "Time Chart",\n            "config": {\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by comas"\n                },\n                "limit": {\n                    "label": "Limit",\n                    "help": "Max number of events"\n                },\n                "interval": {\n                    "label": "Interval",\n                    "minute": "Minute",\n                    "hour": "Hour",\n                    "day": "Day",\n                    "week": "Week",\n                    "month": "Month"\n                },\n                "name": {\n                    "label": "Name",\n                    "help": "Template for the hover serie name, see documentation for more infos about templates."\n                },\n                "interpolation": {\n                    "label": "Interpolation",\n                    "linear": "Linear - straight lines between points",\n                    "step-after": "Step After - square steps from point to point",\n                    "cardinal": "Cardinal - smooth curves via cardinal splines (default)",\n                    "basis": "Basis - smooth curves via B-splines"\n                },\n                "fillEmpty": {\n                    "label": "Fill Empty",\n                    "help": "Fill when there is no events with zero values."\n                }\n            }\n        },\n        "plot": {\n            "title": "Plot Chart",\n            "config": {\n                "sample": {\n                    "label": "Sampling Points",\n                    "help": "X-Axis of this plot"\n                },\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by commas"\n                },\n                "scales": {\n                    "label": "Scales",\n                    "help": "E.g. min max, min max, auto"\n                },\n                "limit": {\n                    "label": "Limit",\n                    "help": "Max number of events"\n                },\n                "name": {\n                    "label": "Name",\n                    "help": "Template for the hover series name, see documentation for more infos about templates."\n                },\n                "interpolation": {\n                    "label": "Interpolation",\n                    "linear": "Linear - straight lines between points",\n                    "step-after": "Step After - square steps from point to point",\n                    "cardinal": "Cardinal - smooth curves via cardinal splines (default)",\n                    "basis": "Basis - smooth curves via B-splines"\n                },\n                "fillEmpty": {\n                    "label": "Fill Empty",\n                    "help": "Fill when there is no events with zero values."\n                }\n            }\n        },\n        "value": {\n            "title": "Last Value",\n            "config": {\n                "field": {\n                    "label": "Field"\n                },\n                "value": {\n                    "label": "Value",\n                    "help": "Template for the value display, see documentation for more infos about templates."\n                },\n                "label": {\n                    "label": "Label",\n                    "help": "Template for the label, see documentation for more infos about templates."\n                }\n            }\n        }\n    },\n    "settings": {\n        "title": "Settings",\n        "language": {\n            "label": "Language"\n        }\n    }\n}\n';});
+define('text!resources/langs/en.json',[],function () { return '{\n    "id": "en",\n    "language": "English",\n    "toolbar": {\n        "createReport": "Create a report",\n        "createVisualization": "Create a visualization",\n        "manageAlerts": "Manage alerts",\n        "createAlert": "Create an alert",\n        "editReport": "Edit report",\n        "help": "Help",\n        "removeReport": "Remove report",\n        "settings": "Settings"\n    },\n    "reports": {\n        "empty": {\n            "message": "There is no reports yet to show.",\n            "create": "Create a report"\n        }\n    },\n    "alert": {\n        "edit": "Edit",\n        "remove": "Remove",\n        "disable": "Disable",\n        "enable": "Enable"\n    },\n    "dialogs": {\n        "alert": {\n            "title": "Alert",\n            "close": "Close"\n        },\n        "confirm": {\n            "title": "Confirm",\n            "cancel": "Cancel",\n            "ok": "Ok"\n        },\n        "prompt": {\n            "title": "Input",\n            "ok": "Ok"\n        },\n        "select": {\n            "title": "Select",\n            "ok": "Ok"\n        },\n        "fields": {\n            "title": "Input",\n            "ok": "Ok"\n        }\n    },\n    "alerts": {\n        "manage": {\n            "title": "Manage alerts",\n            "create": "Create a new alert",\n            "ok": "Ok"\n        },\n        "create": {\n            "title": "Create a new alert",\n            "fields": {\n                "title": {\n                    "label": "Title"\n                },\n                "eventName": {\n                    "label": "Event"\n                },\n                "type": {\n                    "label": "Type"\n                },\n                "interval": {\n                    "label": "Interval",\n                    "help": "Minimum interval for notifications in minutes."\n                },\n                "condition": {\n                    "label": "Condition",\n                    "help": "Learn more about alert conditions in the documentation"\n                }\n            }\n        },\n        "types": {\n            "mail": {\n                "title": "Mail",\n                "config": {\n                    "to": {\n                        "label": "To",\n                        "help": "Addresses separated by commas"\n                    }\n                }\n            },\n            "sms": {\n                "title": "SMS",\n                "config": {\n                    "to": {\n                        "label": "To",\n                        "help": "Phone number"\n                    },\n                    "body": {\n                        "label": "Message",\n                        "help": "Template for the message body."\n                    }\n                }\n            },\n            "webhook": {\n                "title": "Webhook",\n                "config": {\n                    "url": {\n                        "label": "Url"\n                    }\n                }\n            }\n        }\n    },\n    "reports": {\n        "select": {\n            "title": "Select a report",\n            "message": "Choose a new report to open."\n        },\n        "create": {\n            "title": "Create a new report",\n            "fields": {\n                "title": "Title"\n            }\n        },\n        "edit": {\n            "title": "Edit report",\n            "fields": {\n                "title": "Title"\n            }\n        },\n        "remove": {\n            "title": "Remove this report?"\n        },\n        "empty": {\n            "message": "There is no reports yet to show.",\n            "create": "Create a report"\n        }\n    },\n    "visualization": {\n        "create": {\n            "title": "New visualization",\n            "fields": {\n                "eventName": "Event",\n                "type": "Type"\n            }\n        },\n        "remove": {\n            "title": "Do you really want to remove this visualization?"\n        },\n        "download": {\n            "title": "Export data",\n            "message": "Please select a format for download:"\n        }\n    },\n    "visualizations": {\n        "bar": {\n            "title": "Bar Chart",\n            "config": {\n                "field": "Field",\n                "max": "Max Bars"\n            }\n        },\n        "map": {\n            "title": "Map",\n            "config": {\n                "message": {\n                    "label": "Marker Message",\n                    "help": "Template for the message, see documentation for more infos about templates."\n                }\n            }\n        },\n        "table": {\n            "title": "Table",\n            "date": "Date",\n            "config": {\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by comas"\n                },\n                "limit": {\n                    "label": "Limit"\n                }\n            }\n        },\n        "time": {\n            "title": "Time Chart",\n            "config": {\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by comas"\n                },\n                "limit": {\n                    "label": "Limit",\n                    "help": "Max number of events"\n                },\n                "interval": {\n                    "label": "Interval",\n                    "minute": "Minute",\n                    "hour": "Hour",\n                    "day": "Day",\n                    "week": "Week",\n                    "month": "Month"\n                },\n                "name": {\n                    "label": "Name",\n                    "help": "Template for the hover serie name, see documentation for more infos about templates."\n                },\n                "interpolation": {\n                    "label": "Interpolation",\n                    "linear": "Linear - straight lines between points",\n                    "step-after": "Step After - square steps from point to point",\n                    "cardinal": "Cardinal - smooth curves via cardinal splines (default)",\n                    "basis": "Basis - smooth curves via B-splines"\n                },\n                "fillEmpty": {\n                    "label": "Fill Empty",\n                    "help": "Fill when there is no events with zero values."\n                }\n            }\n        },\n        "plot": {\n            "title": "Plot Chart",\n            "config": {\n                "sample": {\n                    "label": "Sampling Points",\n                    "help": "X-Axis of this plot"\n                },\n                "fields": {\n                    "label": "Fields",\n                    "help": "Separated by commas"\n                },\n                "scales": {\n                    "label": "Scales",\n                    "help": "E.g. min max, min max, auto"\n                },\n                "limit": {\n                    "label": "Limit",\n                    "help": "Max number of events"\n                },\n                "name": {\n                    "label": "Name",\n                    "help": "Template for the hover series name, see documentation for more infos about templates."\n                },\n                "interpolation": {\n                    "label": "Interpolation",\n                    "linear": "Linear - straight lines between points",\n                    "step-after": "Step After - square steps from point to point",\n                    "cardinal": "Cardinal - smooth curves via cardinal splines (default)",\n                    "basis": "Basis - smooth curves via B-splines"\n                },\n                "fillEmpty": {\n                    "label": "Fill Empty",\n                    "help": "Fill when there is no events with zero values."\n                }\n            }\n        },\n        "value": {\n            "title": "Last Value",\n            "config": {\n                "field": {\n                    "label": "Field"\n                },\n                "value": {\n                    "label": "Value",\n                    "help": "Template for the value display, see documentation for more infos about templates."\n                },\n                "label": {\n                    "label": "Label",\n                    "help": "Template for the label, see documentation for more infos about templates."\n                }\n            }\n        }\n    },\n    "settings": {\n        "title": "Settings",\n        "language": {\n            "label": "Language"\n        }\n    }\n}\n';});
 
 define('utils/i18n',[
     "hr/hr",
@@ -56376,7 +56376,42 @@ define('utils/dragdrop',[
         DraggableType: DraggableType
     };
 });
-define('text!resources/templates/visualization.html',[],function () { return '<div class="visualization-container">\n    <div class="visualization-header">\n        <div class="pull-right visualization-actions">\n            <button class="btn btn-link action-visualization-move"><span class="octicon octicon-alignment-align"></span></button>\n            <button class="btn btn-link action-visualization-remove"><span class="octicon octicon-trashcan"></span></button>\n            <button class="btn btn-link action-visualization-edit"><span class="octicon octicon-gear"></span></button>\n        </div>\n        <h3><%- model.get("configuration.title") || model.get("eventName") %></h3>\n    </div>\n    <div class="visualization-body"></div>\n</div>';});
+define('text!resources/templates/visualization.html',[],function () { return '<div class="visualization-container">\n    <div class="visualization-header">\n        <div class="pull-right visualization-actions">\n            <button class="btn btn-link action-visualization-download"><span class="octicon octicon-cloud-download"></span></button>\n            <button class="btn btn-link action-visualization-move"><span class="octicon octicon-alignment-align"></span></button>\n            <button class="btn btn-link action-visualization-remove"><span class="octicon octicon-trashcan"></span></button>\n            <button class="btn btn-link action-visualization-edit"><span class="octicon octicon-gear"></span></button>\n        </div>\n        <h3><%- model.get("configuration.title") || model.get("eventName") %></h3>\n    </div>\n    <div class="visualization-body"></div>\n</div>\n';});
+
+function json2csv(data) {
+    var array = typeof data != 'object' ? JSON.parse(data) : data;
+    var str = '';
+    // Header 
+    var line = '';
+    for (var index in array[0]) {
+        if (typeof array[0][index] === 'object') {
+            for (var obj in array[0][index]) {
+                line += obj + ','
+            } 
+        } else {
+            line += index + ', ';
+        }
+    }
+    str += line += '\r\n';
+    // Data 
+    for (var i = 0; i < array.length; i++) {
+        var line = '';
+        for (var index in array[i]) {
+            if(line != '') line += ','
+            var nextObj = array[i][index];
+            if (typeof nextObj === 'object') {
+                for (var obj in nextObj) {
+                    line += nextObj[obj] + ','
+                }
+            } else {
+                line += array[i][index];
+            }
+        }
+ 
+        str += line + '\r\n';
+    }
+    return str;
+}
 
 define('views/lists/visualizations',[
     "hr/utils",
@@ -56384,16 +56419,19 @@ define('views/lists/visualizations',[
     "hr/hr",
     "utils/dragdrop",
     "utils/dialogs",
+    "utils/i18n",
+    "core/api",
     "collections/visualizations",
     "views/visualizations/all",
     "text!resources/templates/visualization.html"
-], function(_, $, hr, dnd, dialogs, Visualizations, allVisualizations, template) {
+], function(_, $, hr, dnd, dialogs, i18n, api, Visualizations, allVisualizations, template) {
     var drag = new dnd.DraggableType();
 
     var VisualizationView = hr.List.Item.extend({
         className: "visualization-el",
         defaults: {},
         events: {
+            "click .action-visualization-download": "downloadVisu",
             "click .action-visualization-move": "moveVisu",
             "click .action-visualization-remove": "removeVisu",
             "click .action-visualization-edit": "editConfig"
@@ -56469,7 +56507,7 @@ define('views/lists/visualizations',[
             var that = this;
             var report = this.model.report;
 
-            dialogs.confirm("Do you really want to remove this visualization?")
+            dialogs.confirm(i18n.t("visualization.remove.title"))
             .then(function() {
                 that.model.destroy();
 
@@ -56481,6 +56519,26 @@ define('views/lists/visualizations',[
             if (!_.isBoolean(st)) st = null;
             this.$el.toggleClass("movable", st);
             this.$(".action-visualization-move").toggleClass("active", this.$el.hasClass("movable"));
+        }, 
+
+        downloadVisu: function() {
+            var that = this;
+            var report = this.model.report;
+          
+            return api.execute("get:events", {
+                type: that.model.get("eventName"),
+                limit: that.model.getConf("limit") || 10000,
+                format: 'json'
+            })
+            .then(function(data) {
+                // Parse to csv
+                var json = "data:application/json;charset=utf-8, " + encodeURIComponent(JSON.stringify(data));
+                var csv = "data:text/csv;charset=utf-8, " + encodeURIComponent(json2csv(data));
+                var downloadcsv = "<a id=\'link\' href=\'" + csv + "\' download=\'export.csv\'>CSV File</a>";
+                var downloadjson = "<a id=\'link\' href=\'" + json + "\' download=\'export.json\'>JSON File</a>";
+                var text = i18n.t("visualization.download.message") + '</br></br>' + downloadcsv + '</br>' + downloadjson;
+                return dialogs.alert(i18n.t("visualization.download.title"), text);
+            });
         }
     });
 
@@ -56504,6 +56562,7 @@ define('views/lists/visualizations',[
 
     return VisualizationsList;
 });
+
 define('text!resources/templates/alert.html',[],function () { return '<div class="row">\n    <div class="col-md-4"><%- model.get("title") %></div>\n    <div class="col-md-3"><%- model.get("condition") %></div>\n    <div class="col-md-2"><%- model.get("interval") %> min</div>\n    <div class="col-md-1">\n        <a href="#" class="action-alert-edit"><%- hr.i18n.t("alert.edit") %></a>\n    </div>\n    <div class="col-md-1">\n        <a href="#" class="action-alert-remove"><%- hr.i18n.t("alert.remove") %></a>\n    </div>\n    <div class="col-md-1">\n        <a href="#" class="action-alert-toggle"><% if (model.get("enabled")) { %><%- hr.i18n.t("alert.disable") %><% } else { %><%- hr.i18n.t("alert.enable") %><% } %></a>\n    </div>\n</div>';});
 
 define('views/lists/alerts',[

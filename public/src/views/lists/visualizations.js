@@ -1,19 +1,57 @@
+function json2csv(data) {
+    var array = typeof data != 'object' ? JSON.parse(data) : data;
+    var str = '';
+    // Header 
+    var line = '';
+    for (var index in array[0]) {
+        if (typeof array[0][index] === 'object') {
+            for (var obj in array[0][index]) {
+                line += obj + ','
+            } 
+        } else {
+            line += index + ', ';
+        }
+    }
+    str += line += '\r\n';
+    // Data 
+    for (var i = 0; i < array.length; i++) {
+        var line = '';
+        for (var index in array[i]) {
+            if(line != '') line += ','
+            var nextObj = array[i][index];
+            if (typeof nextObj === 'object') {
+                for (var obj in nextObj) {
+                    line += nextObj[obj] + ','
+                }
+            } else {
+                line += array[i][index];
+            }
+        }
+ 
+        str += line + '\r\n';
+    }
+    return str;
+}
+
 define([
     "hr/utils",
     "hr/dom",
     "hr/hr",
     "utils/dragdrop",
     "utils/dialogs",
+    "utils/i18n",
+    "core/api",
     "collections/visualizations",
     "views/visualizations/all",
     "text!resources/templates/visualization.html"
-], function(_, $, hr, dnd, dialogs, Visualizations, allVisualizations, template) {
+], function(_, $, hr, dnd, dialogs, i18n, api, Visualizations, allVisualizations, template) {
     var drag = new dnd.DraggableType();
 
     var VisualizationView = hr.List.Item.extend({
         className: "visualization-el",
         defaults: {},
         events: {
+            "click .action-visualization-download": "downloadVisu",
             "click .action-visualization-move": "moveVisu",
             "click .action-visualization-remove": "removeVisu",
             "click .action-visualization-edit": "editConfig"
@@ -89,7 +127,7 @@ define([
             var that = this;
             var report = this.model.report;
 
-            dialogs.confirm("Do you really want to remove this visualization?")
+            dialogs.confirm(i18n.t("visualization.remove.title"))
             .then(function() {
                 that.model.destroy();
 
@@ -101,6 +139,26 @@ define([
             if (!_.isBoolean(st)) st = null;
             this.$el.toggleClass("movable", st);
             this.$(".action-visualization-move").toggleClass("active", this.$el.hasClass("movable"));
+        }, 
+
+        downloadVisu: function() {
+            var that = this;
+            var report = this.model.report;
+          
+            return api.execute("get:events", {
+                type: that.model.get("eventName"),
+                limit: that.model.getConf("limit") || 10000,
+                format: 'json'
+            })
+            .then(function(data) {
+                // Parse to csv
+                var json = "data:application/json;charset=utf-8, " + encodeURIComponent(JSON.stringify(data));
+                var csv = "data:text/csv;charset=utf-8, " + encodeURIComponent(json2csv(data));
+                var downloadcsv = "<a id=\'link\' href=\'" + csv + "\' download=\'export.csv\'>CSV File</a>";
+                var downloadjson = "<a id=\'link\' href=\'" + json + "\' download=\'export.json\'>JSON File</a>";
+                var text = i18n.t("visualization.download.message") + '</br></br>' + downloadcsv + '</br>' + downloadjson;
+                return dialogs.alert(i18n.t("visualization.download.title"), text);
+            });
         }
     });
 

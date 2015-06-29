@@ -139,6 +139,13 @@
                 "eventName": "Event",
                 "type": "Type"
             }
+        },
+        "remove": {
+            "title": "Do you really want to remove this visualization?"
+        },
+        "download": {
+            "title": "Export data",
+            "message": "Please select a format for download:"
         }
     },
     "visualizations": {
