@@ -33,7 +33,8 @@ require([
             "click .action-visualization-create": "createVisualization",
             "click .action-alert-manage": "manageAlerts",
             "click .action-alert-create": "createAlert",
-            "click .action-settings": "settings"
+            "click .action-settings": "settings",
+            "click .action-wipe": "wipe"
         },
         routes: {
             "report/:id": "routeReport"
@@ -283,6 +284,14 @@ require([
             settings.dialog()
             .then(function() {
                 location.reload();
+            });
+        },
+
+        wipe: function() {
+            return dialogs.confirm(i18n.t("wipe.title"))
+            .then(function() {
+                return api.execute("delete:data")
+                .fail(dialogs.error);
             });
         },
 

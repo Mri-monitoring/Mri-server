@@ -9,7 +9,8 @@
         "editReport": "Edit report",
         "help": "Help",
         "removeReport": "Remove report",
-        "settings": "Settings"
+        "settings": "Settings",
+        "wipe": "Wipe database"
     },
     "reports": {
         "empty": {
@@ -272,5 +273,8 @@
         "language": {
             "label": "Language"
         }
+    },
+    "wipe": {
+        "title": "Are you sure you want to remove all events, reports, visualizations, and alerts?"
     }
 }
