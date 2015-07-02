@@ -25940,7 +25940,7 @@ Logger, Requests, Urls, Storage, Cache, Cookies, Template, Resources, Offline, B
     
     return hr;
 });
-define('hr/args',[],function() { return {"revision":1435786002270,"baseUrl":"/"}; });
+define('hr/args',[],function() { return {"revision":1435852719206,"baseUrl":"/"}; });
 define('core/api',[
     'hr/hr'
 ], function(hr) {
@@ -56966,6 +56966,9 @@ require([
             .then(function() {
                 return api.execute("delete:data")
                 .fail(dialogs.error);
+            })
+            .then(function() {
+                window.location = '/';
             });
         },
 
@@ -56981,6 +56984,7 @@ require([
 
     var app = new Application();
     app.reports.loadAll().then(initResources).then(app.run.bind(app), dialogs.error);
+
 });
 
 define("main", ["hr/dom","vendors/bootstrap/js/carousel","vendors/bootstrap/js/dropdown","vendors/bootstrap/js/button","vendors/bootstrap/js/modal","vendors/bootstrap/js/affix","vendors/bootstrap/js/alert","vendors/bootstrap/js/collapse","vendors/bootstrap/js/tooltip","vendors/bootstrap/js/popover","vendors/bootstrap/js/scrollspy","vendors/bootstrap/js/tab","vendors/bootstrap/js/transition"], function(){});

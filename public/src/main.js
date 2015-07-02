@@ -290,8 +290,11 @@ require([
         wipe: function() {
             return dialogs.confirm(i18n.t("wipe.title"))
             .then(function() {
-                retur api.execute("delete:data")
+                return api.execute("delete:data")
                 .fail(dialogs.error);
+            })
+            .then(function() {
+                window.location = '/';
             });
         },
 
@@ -307,4 +310,5 @@ require([
 
     var app = new Application();
     app.reports.loadAll().then(initResources).then(app.run.bind(app), dialogs.error);
+
 });
