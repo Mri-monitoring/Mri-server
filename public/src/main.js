@@ -290,7 +290,7 @@ require([
         wipe: function() {
             return dialogs.confirm(i18n.t("wipe.title"))
             .then(function() {
-                return api.execute("delete:data")
+                retur api.execute("delete:data")
                 .fail(dialogs.error);
             });
         },
