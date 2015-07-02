@@ -162,7 +162,11 @@ require([
                 return that.reports.loadAll();
             })
             .then(function() {
-                that.setReport(that.reports.first());
+                if (that.reports.length > 0) {
+                    that.setReport(that.reports.first());
+                } else {
+                    hr.History.navigate('');
+                }
                 that.update();
             })
             .fail(dialogs.error);
