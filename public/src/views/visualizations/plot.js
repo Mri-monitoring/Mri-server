@@ -72,7 +72,7 @@ define([
                             _.sortBy(
                                 _.filter(
                                     that.data, 
-                                    function(n) { return n['properties'][field]; }
+                                    function(n) { return !isNaN(n['properties'][field]); }
                                 ), 
                                 function(n) { return n['properties'][sampleName]; }
                             ), 
