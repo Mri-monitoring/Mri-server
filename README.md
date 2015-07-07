@@ -3,8 +3,6 @@ Mri-Server
 
 > Neural network monitoring
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
 This project is based on Reportr, the open source dashboard. For instructions specific to Reportr, please [see the project homepage](https://github.com/Reportr/dashboard).
 
 Mri-server constitutes the web-based monitoring portion of Mri. When used together with the [Mri-client](https://github.com/Reportr), it allows you to watch the progress of your networks as they train from anywhere, as well as test multiple hyperparameters or architectures at once.
@@ -12,6 +10,13 @@ Mri-server constitutes the web-based monitoring portion of Mri. When used togeth
 The project is entirely open source and you can host your own Mri-server instance on your own server or Heroku. 
 
 [![Screen Preview](./preview.png)](./preview.png)
+
+## Quick start (automatic deployment)
+By deploying this app to Heroku you can easily start your own private instance of Mri-server with minimal configuration. Heroku is a scalable cloud platform that offers a free-tier sufficient to run your own Mri-server. Simply click the button below to get started. You will need to create an account and provide credit card information. Don't worry -- credit card information is only used if you try and scale up your Mri-server to multiple machines. As long as you stick to the default free dyno you will not be charged.
+
+Heroku will ask you to set authentication variables and will automatically set the remaining configuration variables. You will also be given the option to choose an app name.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Start your instance (only required if deploying by hand)
 
@@ -39,7 +44,7 @@ $ git push heroku master
 
 ## Configuration
 
-Reportr is configured using environment variables.
+Reportr is configured using environment variables. 
 
 | Name | Description |
 | ---- | ----------- |
