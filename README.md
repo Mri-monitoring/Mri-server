@@ -5,7 +5,7 @@ Mri-Server
 
 This project is based on Reportr, the open source dashboard. For instructions specific to Reportr, please [see the project homepage](https://github.com/Reportr/dashboard).
 
-Mri-server constitutes the web-based monitoring portion of Mri. When used together with the [Mri-client](https://github.com/Reportr), it allows you to watch the progress of your networks as they train from anywhere, as well as test multiple hyperparameters or architectures at once.
+Mri-server constitutes the web-based monitoring portion of Mri. When used together with the [Mri-app for Caffe](https://github.com/Mri-monitoring/Mri-app) or the [Mri-python-client](https://github.com/Mri-monitoring/Mri-python-client), it allows you to watch the progress of your networks as they train from anywhere, as well as test multiple hyperparameters or architectures at once.
 
 The project is entirely open source and you can host your own Mri-server instance on your own server or Heroku. 
 
@@ -54,8 +54,8 @@ Reportr is configured using environment variables.
 | AUTH_USERNAME | Username for authentication |
 | AUTH_PASSWORD | Password for authentication |
 
-## Running with Mri-Client
-The Mri-Client already knows how to talk to the server, and will automatically create reports and visualizations as you train networks. Simply modify the Mri-Client configuration file to properly interface with the server as a dispatch. See the Reportr project page for full API specifications.
+## Running with Mri-app or Mri-python-client
+The Mri clients already know how to talk to the server, and will automatically create reports and visualizations as you train networks. Simply modify the Mri-app configuration file to properly interface with the server as a dispatch. See [API_REFERENCE.md](https://github.com/Mri-monitoring/Mri-server/blob/master/API_REFERENCE.md) for full API specifications.
 
 ## Scale it
 
