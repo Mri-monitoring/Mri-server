@@ -18,6 +18,7 @@ define([
 
         dialog: function() {
             var that = this;
+            var curLocale = i18n.translations[i18n.currentLocale()];
 
             return dialogs.fields(i18n.t("settings.title"), {
                 "language": {
@@ -26,6 +27,16 @@ define([
                     options: _.chain(i18n.translations)
                         .map(function(t, lang) {
                             return [lang, t.language];
+                        })
+                        .object()
+                        .value()
+                }, 
+                "color": {
+                    label: i18n.t("settings.color.label"),
+                    type: "select",
+                    options: _.chain(curLocale.settings.color.scheme)
+                        .map(function(scheme, scheme_name) {
+                            return [scheme_name, scheme];
                         })
                         .object()
                         .value()

@@ -6,8 +6,10 @@ define([
     "datamaps",
     "utils/template",
     "core/api",
+    "core/settings",
+    "core/colors",
     "views/visualizations/base"
-], function(_, $, hr, i18n, Datamap, template, api, BaseVisualization) {
+], function(_, $, hr, i18n, Datamap, template, api, settings, color, BaseVisualization) {
     var Visualization = BaseVisualization.extend({
         className: "visualization visualization-map",
         defaults: {},
@@ -25,12 +27,15 @@ define([
         prepareMap: function() {
             if (this.map) return;
 
+            var colorOption = settings.attributes.color;
+            var c = colors[colorOption];
+
             this.map = new Datamap({
                 element: this.$map.get(0),
                 scope: 'world',
                 fills: {
-                    defaultFill: '#f3f5f9',
-                    marker: "#a6d87a"
+                    defaultFill: c(3),
+                    marker: c(1)
                 },
                 geographyConfig: {
                     borderWidth: 1,

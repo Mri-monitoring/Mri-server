@@ -5,11 +5,13 @@ define([
     "d3",
     "rickshaw",
     "core/api",
+    "core/settings",
+    "core/colors",
     "utils/i18n",
     "utils/template",
     "views/visualizations/base",
     "text!resources/templates/visualizations/time.html"
-], function(_, $, hr, d3, Rickshaw, api, i18n, template, BaseVisualization, templateFile) {
+], function(_, $, hr, d3, Rickshaw, api, settings, colors, i18n, template, BaseVisualization, templateFile) {
     window.d3 = d3;
 
     var INTERPOLATIONS = ['linear', 'step-after', 'cardinal', 'basis'];
@@ -58,7 +60,8 @@ define([
                     }
                 );
                 var sampleName = this.model.getConf("sample", "").trim();
-                var colors = d3.scale.category10();
+                var colorOption = settings.attributes.color;
+                var c = colors[colorOption];
                 var series = _.chain(fieldNames).compact().concat([""])
                 .map(function(field, i, list) {
                     if (list.length > 1 && !field) return null;
@@ -67,7 +70,7 @@ define([
                         name: template(tplMessage, {
                             'field': field
                         }),
-                        color: colors(i),
+                        color: c(i),
                         data: _.map(
                             _.sortBy(
                                 _.filter(

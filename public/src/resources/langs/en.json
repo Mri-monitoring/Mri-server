@@ -272,6 +272,15 @@
         "title": "Settings",
         "language": {
             "label": "Language"
+        },
+        "color": {
+            "label": "Color Scheme",
+            "scheme": {
+                "divergent": "Divergent",
+                "diverse": "Diverse",
+                "convergent": "Convergent",
+                "greens": "Greens"                
+            }
         }
     },
     "wipe": {

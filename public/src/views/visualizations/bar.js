@@ -4,15 +4,30 @@ define([
     "hr/hr",
     "utils/i18n",
     "core/api",
+    "core/settings",
+    "core/colors",
     "views/visualizations/base",
     "text!resources/templates/visualizations/bar.html"
-], function(_, $, hr, i18n, api, BaseVisualization, templateFile) {
+], function(_, $, hr, i18n, api, settings, colors, BaseVisualization, templateFile) {
 
     var BarVisualization = BaseVisualization.extend({
         className: "visualization visualization-bar",
         defaults: {},
         events: {},
         template: templateFile,
+
+        templateContext: function() {
+            var colorOption = settings.attributes.color;
+            var c = colors[colorOption];
+            return {
+                model: this.model,
+                data: this.data,
+                colorData: {'value': c(0)},
+                templates: {
+                    color: this.model.getConf("colorOverride") || '<%- value %>'
+                }
+            }
+        },
 
         pull: function() {
             var that = this;
@@ -22,7 +37,8 @@ define([
                 field: this.model.getConf("field")
             })
             .then(function(data) {
-                return data.slice(0, that.model.getConf("max", 4));
+                var car = data.slice(0, that.model.getConf("max", 4));
+                return car;
             });
         }
     });

@@ -5,11 +5,13 @@ define([
     "d3",
     "rickshaw",
     "core/api",
+    "core/settings",
+    "core/colors",
     "utils/i18n",
     "utils/template",
     "views/visualizations/base",
     "text!resources/templates/visualizations/time.html"
-], function(_, $, hr, d3, Rickshaw, api, i18n, template, BaseVisualization, templateFile) {
+], function(_, $, hr, d3, Rickshaw, api, settings, colors, i18n, template, BaseVisualization, templateFile) {
     window.d3 = d3;
 
     var INTERVALS = ["minute", "hour", "day", "week", "month"];
@@ -26,6 +28,8 @@ define([
                 var that = this;
                 var tplMessage = that.model.getConf("name") || "<%- (field? field : 'Count') %>";
 
+                var colorOption = settings.attributes.color;
+                var c = colors[colorOption]
                 // Build series from data
                 var fieldNames = _.map(this.model.getConf("fields", "").split(","), 
                     function (str) { return str.trim() }
@@ -38,7 +42,7 @@ define([
                         name: template(tplMessage, {
                             'field': field
                         }),
-                        color: '#a6d87a',
+                        color: c(i),
                         data: _.map(that.data, function(d) {
                             return {
                                 x: d.date,

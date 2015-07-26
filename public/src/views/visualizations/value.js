@@ -3,11 +3,13 @@ define([
     "hr/dom",
     "hr/hr",
     "core/api",
+    "core/settings",
+    "core/colors",
     "utils/i18n",
     "utils/template",
     "views/visualizations/base",
     "text!resources/templates/visualizations/value.html"
-], function(_, $, hr, api, i18n, template, BaseVisualization, templateFile) {
+], function(_, $, hr, api, settings, colors, i18n, template, BaseVisualization, templateFile) {
 
     var ValueVisualization = BaseVisualization.extend({
         className: "visualization visualization-value",
@@ -16,12 +18,17 @@ define([
         template: templateFile,
 
         templateContext: function() {
+            var colorOption = settings.attributes.color;
+            var c = colors[colorOption]
             return {
                 model: this.model,
                 data: this.data,
+                colorData: {'value': c(0)},
                 templates: {
                     label: this.model.getConf("label") || '<%- $.date(date) %>',
-                    value: this.model.getConf("value") || "<%- properties."+this.model.getConf("field")+" %>"
+                    value: this.model.getConf("value") || "<%- properties."+this.model.getConf("field")+" %>",
+                    color: this.model.getConf("colorOverride") || '<%- value %>'
+                    
                 }
             }
         },
