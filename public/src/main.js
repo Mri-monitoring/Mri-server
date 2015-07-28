@@ -165,7 +165,7 @@ require([
                 if (that.reports.length > 0) {
                     that.setReport(that.reports.first());
                 } else {
-                    hr.History.navigate('');
+                    window.location = '/';
                 }
                 that.update();
             })

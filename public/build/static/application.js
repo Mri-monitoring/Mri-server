@@ -25940,7 +25940,7 @@ Logger, Requests, Urls, Storage, Cache, Cookies, Template, Resources, Offline, B
     
     return hr;
 });
-define('hr/args',[],function() { return {"revision":1437925708688,"baseUrl":"/"}; });
+define('hr/args',[],function() { return {"revision":1438113726653,"baseUrl":"/"}; });
 define('core/api',[
     'hr/hr'
 ], function(hr) {
@@ -56908,7 +56908,7 @@ require([
                 if (that.reports.length > 0) {
                     that.setReport(that.reports.first());
                 } else {
-                    hr.History.navigate('');
+                    window.location = '/';
                 }
                 that.update();
             })
