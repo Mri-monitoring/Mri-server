@@ -6,6 +6,7 @@ define([
 ], function(_, hr, dialogs, i18n) {
     var Settings = hr.Model.extend({
         defaults: {
+            color: "divergent",
             language: "en"
         },
 
