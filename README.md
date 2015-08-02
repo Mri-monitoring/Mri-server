@@ -11,36 +11,9 @@ The project is entirely open source and you can host your own Mri-server instanc
 
 [![Screen Preview](./preview.png)](./preview.png)
 
-## Quick start (automatic deployment)
-By deploying this app to Heroku you can easily start your own private instance of Mri-server with minimal configuration. Heroku is a scalable cloud platform that offers a free-tier sufficient to run your own Mri-server. Simply click the button below to get started. You will need to create an account and provide credit card information. Don't worry -- credit card information is only used if you try and scale up your Mri-server to multiple machines. As long as you stick to the default free dyno you will not be charged.
+## Installation
 
-Heroku will ask you to set authentication variables and will automatically set the remaining configuration variables. You will also be given the option to choose an app name.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Start your instance (only required if deploying by hand)
-
-Mri-server is really easy to run locally or on heroku-compatible services. Note that if you used the *Deploy to Heroku* button above, you do not need to follow these steps unless you'd like to edit Mri-Server's codebase.
-
-```
-$ git clone https://github.com/Mri-monitoring/Mri-server.git 
-$ npm install .
-```
-
-To run it locally, you should use [foreman](http://ddollar.github.io/foreman/) (configuration can be stored in a [.env file](https://devcenter.heroku.com/articles/config-vars#local-setup)):
-
-```
-$ foreman start
-```
-
-To deploy it on Heroku:
-
-```
-$ heroku config:set MONGODB_URL=mongodb://...
-$ heroku config:set AUTH_USERNAME=...
-$ heroku config:set AUTH_PASSWORD=...
-$ git push heroku master
-```
+For installation instructions, see the [documentation](http://mri.readthedocs.org/)
 
 ## Configuration
 
