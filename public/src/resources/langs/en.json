@@ -266,6 +266,22 @@
                     "help": "Template for the label, see documentation for more infos about templates."
                 }
             }
+        },
+        "extremes": {
+            "title": "Extreme Values",
+            "config": {
+                "field": {
+                    "label": "Field"
+                },
+                "valueTemplate": {
+                    "label": "Value Template",
+                    "help": "Template for the value display, see documentation for more infos about templates."
+                },
+                "fieldTemplate": {
+                    "label": "Field Template",
+                    "help": "Template for the field, see documentation for more infos about templates."
+                }
+            }
         }
     },
     "settings": {

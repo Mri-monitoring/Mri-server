@@ -14,7 +14,10 @@ define([
             hr.Storage.set("settings", this.toJSON());
         },
         load: function() {
-            this.reset(hr.Storage.get("settings"));
+            var settings = hr.Storage.get("settings")
+            if (settings) {
+                this.reset(settings);
+            }
         },
 
         dialog: function() {
