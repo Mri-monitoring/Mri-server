@@ -1,2 +1,2 @@
-web: nodemon bin/web.js
-worker: nodemon bin/worker.js
+web: node bin/web.js
+worker: node bin/worker.js
